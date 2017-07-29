@@ -1,0 +1,28 @@
+{
+  "name": "phdevsdir",
+  "version": "1.0.0",
+  "description": "A React directory website of the Port Harcourt Dev community",
+  "main": "server/app.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PHDevsConnect/phdevsdir.git"
+  },
+  "keywords": [
+    "React",
+    "Express",
+    "GraphQL",
+    "Heroku",
+    "Port Harcourt Devs",
+    "Port Harcourt",
+    "Directory"
+  ],
+  "author": "PHDEVS",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PHDevsConnect/phdevsdir/issues"
+  },
+  "homepage": "https://github.com/PHDevsConnect/phdevsdir#readme"
+}
