@@ -14,3 +14,14 @@ Params
 - `github_url` (String) `required`
 
 `GET` `https://phdevsdir.herokuapp.com/api/v1/developers` - display all developers
+
+# Contributing
+- Fork the repo
+- Make your changes
+- Create a PR
+
+# Using Postman to test routes
+- Install Postman (Google Chrome Required) https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en
+- Launch the app from chrome://apps
+- Paste the app link in the url bar, set the request method (POST, GET, PUT, UPDATE, etc)
+- Hit "send"
