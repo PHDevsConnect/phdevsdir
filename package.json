@@ -1,11 +1,12 @@
 {
   "name": "phdevsdir",
   "version": "1.0.0",
-  "description": "PHDEVS Directory",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js -e .js"
+    "start": "node index",
+    "startw": "nodemon index.js -e .js"
   },
   "repository": {
     "type": "git"
