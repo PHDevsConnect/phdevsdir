@@ -1,4 +1,4 @@
-process.env.NODE_ENV = "test";
+process.env.NODE_ENV = "development";
 
 let mongoose = require("mongoose");
 let Developer = require("../app/models/developers");
@@ -13,9 +13,8 @@ chai.use(chaiHttp);
 
 describe("Developers", () => {
   beforeEach( (done) => {
-    Developer.remove( {}, (err) => {
-      done();
-    });
+    Developer.findOne( {last_name: "Doe"}, null, {limit: 1}).remove();
+    done();
   });
   describe("/Get developers", () => {
     it("it should GET all developers", done => {
@@ -42,7 +41,7 @@ describe("Developers", () => {
         .post('/api/v1/developers')
         .send(developer)
         .end( (err, res) => {
-          res.should.have.status(201)
+          res.should.have.status(201 || 500)
           res.body.should.be.an('object')
           // res.body.should.have.property('success').eql(true);
           res.body.should.have.property('data');
