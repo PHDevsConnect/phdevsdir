@@ -60,7 +60,10 @@ app.get("/", (req, res) => {
     message: "Valid endpoint is /api/v1/"
   });
 });
-
+app.get("/isAlive", (req, res) => {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Server is Up!\n');
+});
 /**
  * Serve API
  * Module dependencies.
@@ -144,3 +147,5 @@ function onListening() {
   const bind = typeof addr === "string" ? "pipe " + addr : "port " + addr.port;
   debug("Listening on " + bind);
 }
+
+module.exports = app; // tests
