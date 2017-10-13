@@ -30,7 +30,7 @@ const online_DB_uri = `mongodb://heroku_8s9nbdfn:4vjc4tbv8oho7jg10tqnv1qd3p@ds11
   local_DB_uri = `mongodb://localhost:27017/phdevsdir`;
 
 mongoose.connect(
-  environment === "production" ? online_DB_uri : online_DB_uri,
+  environment === "production" ? online_DB_uri : local_DB_uri,
   {
     useMongoClient: true
   },
