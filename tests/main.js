@@ -1,4 +1,4 @@
-process.env.NODE_ENV = "test";
+process.env.NODE_ENV = "production";
 
 let mongoose = require("mongoose");
 let Developer = require("../app/models/developers");
@@ -12,11 +12,11 @@ let should = chai.should();
 chai.use(chaiHttp);
 
 describe("Developers", () => {
-  beforeEach( (done) => {
-    Developer.remove( {}, (err) => {
-      done();
-    });
-  });
+  // beforeEach( (done) => {
+  //   Developer.remove( {}, (err) => {
+  //     done();
+  //   });
+  // });
   describe("/Get developers", () => {
     it("it should GET all developers", done => {
       chai
