@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha ./tests --timeout 10000",
     "start": "node index",
     "startw": "nodemon index.js -e .js"
   },
@@ -16,6 +16,7 @@
     "babel-polyfill": "^6.26.0",
     "bcrypt": "^1.0.2",
     "body-parser": "^1.17.2",
+    "chai": "^4.1.2",
     "connect-multiparty": "^2.0.0",
     "cookie-parser": "^1.4.3",
     "dotenv": "^4.0.0",
@@ -24,6 +25,7 @@
     "helmet": "^3.6.1",
     "lodash": "^4.17.4",
     "mime": "^1.3.6",
+    "mocha": "^4.0.1",
     "moment": "^2.18.1",
     "mongodb": "^2.2.30",
     "mongoose": "^4.11.3",
@@ -43,6 +45,7 @@
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
+    "chai-http": "^3.0.0",
     "nodemon": "^1.12.1"
   }
 }
