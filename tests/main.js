@@ -18,7 +18,7 @@ describe("Developers", () => {
     done();
   });
   describe("/Get developers", () => {
-    it("it should GET all developers", done => {
+    it("it should GET all developers when the route is hit", done => {
       chai
         .request(server)
         .get("/api/v1/developers")
@@ -30,7 +30,7 @@ describe("Developers", () => {
     });
   });
   describe("/POST developers", () => {
-    it("it should create a new dev record", done => {
+    it("it should create a new dev record when all parameters are provided", done => {
       let developer = {
         first_name: faker.name.findName(),
         last_name: faker.name.findName(),
@@ -44,7 +44,6 @@ describe("Developers", () => {
         .end( (err, res) => {
           res.should.have.status(201 || 500)
           res.body.should.be.an('object')
-          // res.body.should.have.property('success').eql(true);
           res.body.should.have.property('data');
           done();
         });
@@ -54,7 +53,7 @@ describe("Developers", () => {
 
 describe("Server", () => {
   describe("/Get server status", () => {
-    it("it should return Server is Up!", done => {
+    it("it should return Server is Up! when route /isAlive is hit", done => {
       chai
         .request(server)
         .get("/isAlive")
