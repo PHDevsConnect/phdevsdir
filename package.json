@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./tests --timeout 10000 --exit && ./client/node_modules/mocha/bin/mocha ./client/src/tests --timeout 10000 --exit",
+    "test": "mocha ./tests --timeout 10000 --exit && mocha ./client/src/tests --timeout 10000 --exit",
     "start": "concurrently \"npm run server\" \"npm run client\"",
     "server": "node index.js",
     "client": "cd client && npm start",
