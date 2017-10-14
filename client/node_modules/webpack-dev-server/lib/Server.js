@@ -103,14 +103,13 @@ function Server(compiler, options) {
 
   app.get('/webpack-dev-server', (req, res) => {
     res.setHeader('Content-Type', 'text/html');
-    /* eslint-disable quotes */
     res.write('<!DOCTYPE html><html><head><meta charset="utf-8"/></head><body>');
-    const outputPath = this.middleware.getFilenameFromUrl(options.publicPath || "/");
+    const outputPath = this.middleware.getFilenameFromUrl(options.publicPath || '/');
     const filesystem = this.middleware.fileSystem;
 
     function writeDirectory(baseUrl, basePath) {
       const content = filesystem.readdirSync(basePath);
-      res.write("<ul>");
+      res.write('<ul>');
       content.forEach((item) => {
         const p = `${basePath}/${item}`;
         if (filesystem.statSync(p).isFile()) {
@@ -139,9 +138,8 @@ function Server(compiler, options) {
           res.write('</li>');
         }
       });
-      res.write("</ul>");
+      res.write('</ul>');
     }
-    /* eslint-enable quotes */
     writeDirectory(options.publicPath || '/', outputPath);
     res.end('</body></html>');
   });
@@ -323,9 +321,17 @@ function Server(compiler, options) {
       }
     },
 
+    before: () => {
+      if (typeof options.before === 'function') { options.before(app, this); }
+    },
+
     middleware: () => {
       // include our middleware to ensure it is able to handle '/index.html' request after redirect
       app.use(this.middleware);
+    },
+
+    after: () => {
+      if (typeof options.after === 'function') { options.after(app, this); }
     },
 
     headers: () => {
@@ -337,11 +343,14 @@ function Server(compiler, options) {
     },
 
     setup: () => {
-      if (typeof options.setup === 'function') { options.setup(app, this); }
+      if (typeof options.setup === 'function') {
+        log('The `setup` option is deprecated and will be removed in v3. Please update your config to use `before`');
+        options.setup(app, this);
+      }
     }
   };
 
-  const defaultFeatures = ['setup', 'headers', 'middleware'];
+  const defaultFeatures = ['before', 'setup', 'headers', 'middleware'];
   if (options.proxy) { defaultFeatures.push('proxy', 'middleware'); }
   if (contentBase !== false) { defaultFeatures.push('contentBaseFiles'); }
   if (options.watchContentBase) { defaultFeatures.push('watchContentBase'); }
@@ -353,6 +362,7 @@ function Server(compiler, options) {
   if (contentBase !== false) { defaultFeatures.push('contentBaseIndex'); }
   // compress is placed last and uses unshift so that it will be the first middleware used
   if (options.compress) { defaultFeatures.unshift('compress'); }
+  if (options.after) { defaultFeatures.push('after'); }
 
   (options.features || defaultFeatures).forEach((feature) => {
     features[feature]();
@@ -624,13 +634,11 @@ Server.prototype.serveMagicHtml = function (req, res, next) {
   try {
     if (!this.middleware.fileSystem.statSync(this.middleware.getFilenameFromUrl(`${_path}.js`)).isFile()) { return next(); }
     // Serve a page that executes the javascript
-    /* eslint-disable quotes */
     res.write('<!DOCTYPE html><html><head><meta charset="utf-8"/></head><body><script type="text/javascript" charset="utf-8" src="');
     res.write(_path);
     res.write('.js');
-    res.write(req._parsedUrl.search || "");
+    res.write(req._parsedUrl.search || '');
     res.end('"></script></body></html>');
-    /* eslint-enable quotes */
   } catch (e) {
     return next();
   }

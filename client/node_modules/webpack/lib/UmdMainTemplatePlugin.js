@@ -41,8 +41,8 @@ class UmdMainTemplatePlugin {
 
 	apply(compilation) {
 		const mainTemplate = compilation.mainTemplate;
-		compilation.templatesPlugin("render-with-entry", function(source, chunk, hash) {
-			let externals = chunk.getModules().filter(m => m.external);
+		compilation.templatesPlugin("render-with-entry", (source, chunk, hash) => {
+			let externals = chunk.getModules().filter(m => m.external && (m.type === "umd" || m.type === "umd2"));
 			const optionalExternals = [];
 			let requiredExternals = [];
 			if(this.optionalAmdExternalAsGlobal) {
@@ -172,19 +172,19 @@ class UmdMainTemplatePlugin {
 					"	}\n"
 				) +
 				"})(this, function(" + externalsArguments(externals) + ") {\nreturn ", "webpack/universalModuleDefinition"), source, ";\n})");
-		}.bind(this));
-		mainTemplate.plugin("global-hash-paths", function(paths) {
+		});
+		mainTemplate.plugin("global-hash-paths", (paths) => {
 			if(this.names.root) paths = paths.concat(this.names.root);
 			if(this.names.amd) paths = paths.concat(this.names.amd);
 			if(this.names.commonjs) paths = paths.concat(this.names.commonjs);
 			return paths;
-		}.bind(this));
-		mainTemplate.plugin("hash", function(hash) {
+		});
+		mainTemplate.plugin("hash", (hash) => {
 			hash.update("umd");
 			hash.update(`${this.names.root}`);
 			hash.update(`${this.names.amd}`);
 			hash.update(`${this.names.commonjs}`);
-		}.bind(this));
+		});
 	}
 }
 
