@@ -8,14 +8,14 @@ let chai = require("chai");
 let chaiHttp = require("chai-http");
 let server = require("../index");
 let should = chai.should();
+let faker = require('faker');
 
 chai.use(chaiHttp);
 
 describe("Developers", () => {
   beforeEach( (done) => {
-    Developer.remove( {}, (err) => {
-      done();
-    });
+    Developer.findOne( {last_name: "Doe"}, null, {limit: 1}).remove();
+    done();
   });
   describe("/Get developers", () => {
     it("it should GET all developers", done => {
@@ -32,17 +32,17 @@ describe("Developers", () => {
   describe("/POST developers", () => {
     it("it should create a new dev record", done => {
       let developer = {
-        first_name: "John",
-        last_name: "Doe",
-        email: "john.doe@mail.com",
+        first_name: faker.name.findName(),
+        last_name: faker.name.findName(),
+        email: faker.internet.email(),
         stack: "Python, JavaScript, PHP, Go",
-        github_url: "https://github.com/johndoe"
+        github_url: faker.internet.url()
       }
       chai.request(server)
         .post('/api/v1/developers')
         .send(developer)
         .end( (err, res) => {
-          res.should.have.status(201)
+          res.should.have.status(201 || 500)
           res.body.should.be.an('object')
           // res.body.should.have.property('success').eql(true);
           res.body.should.have.property('data');
