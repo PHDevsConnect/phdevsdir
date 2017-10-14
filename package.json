@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./tests --timeout 10000 --exit",
-    "start": "node index",
+    "test": "mocha ./tests --timeout 10000 --exit && mocha ./client/src/tests --timeout 10000 --exit",
+    "start": "./node_modules/.bin/concurrently \"npm run server\" \"npm run client\"",
+    "server": "node index.js",
+    "client": "cd client && npm start",
     "startw": "nodemon index.js -e .js"
   },
   "repository": {
@@ -17,6 +19,7 @@
     "bcrypt": "^1.0.2",
     "body-parser": "^1.17.2",
     "chai": "^4.1.2",
+    "concurrently": "^3.5.0",
     "connect-multiparty": "^2.0.0",
     "cookie-parser": "^1.4.3",
     "dotenv": "^4.0.0",
