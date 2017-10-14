@@ -1,4 +1,7 @@
-# phdevsdir
+# PH Developers Directory
+[![CircleCI](https://circleci.com/gh/PHDevsConnect/phdevsdir/tree/master.svg?style=svg)](https://circleci.com/gh/PHDevsConnect/phdevsdir/tree/master)
+
+
 A Directory app for web devs in Port Harcourt, Nigeria. Built with React, Express and MongoDB
 
 # API DOCS
