@@ -1,4 +1,4 @@
-process.env.NODE_ENV = "development";
+process.env.NODE_ENV = "test";
 
 let mongoose = require("mongoose");
 let Developer = require("../app/models/developers");
@@ -8,6 +8,7 @@ let chai = require("chai");
 let chaiHttp = require("chai-http");
 let server = require("../index");
 let should = chai.should();
+let faker = require('faker');
 
 chai.use(chaiHttp);
 
@@ -31,11 +32,11 @@ describe("Developers", () => {
   describe("/POST developers", () => {
     it("it should create a new dev record", done => {
       let developer = {
-        first_name: "John",
-        last_name: "Doe",
-        email: "john.doe@mail.com",
+        first_name: faker.name.findName(),
+        last_name: faker.name.findName(),
+        email: faker.internet.email(),
         stack: "Python, JavaScript, PHP, Go",
-        github_url: "https://github.com/johndoe"
+        github_url: faker.internet.url()
       }
       chai.request(server)
         .post('/api/v1/developers')
