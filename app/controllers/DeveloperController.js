@@ -18,7 +18,7 @@ exports.newDeveloper = (req, res, next) => {
     first_name: req.body.first_name,
     last_name: req.body.last_name,
     email: req.body.email,
-    stack: req.body.stack.split(','),
+    stack: req.body.stack.split(',').map((elem) => elem.trim()),
     github_url: req.body.github_url
   };
   developers = new Developers(developerData).save()
