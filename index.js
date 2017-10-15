@@ -96,7 +96,6 @@ server.on("listening", onListening);
  * Normalize a port into a number, string, or false.
  */
 
-//changed function to es6 arrow functions
 const normalizePort = (val) => {
   const port = parseInt(val, 10);
 
@@ -117,7 +116,6 @@ const normalizePort = (val) => {
  * Event listener for HTTP server "error" event.
  */
 
-//changed function to es6 arrow functions
 const onError = (error) => {
   if (error.syscall !== "listen") {
     throw error;
@@ -145,7 +143,6 @@ const onError = (error) => {
  */
 const debug = require("debug");
 
-//changed function to es6 arrow functions
 onListening() => {
   const addr = server.address();
   const bind = typeof addr === "string" ? "pipe " + addr : "port " + addr.port;
