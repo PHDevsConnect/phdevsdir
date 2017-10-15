@@ -1,0 +1,139 @@
+body, html {
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 0px;
+    background-color: #ececec;
+}
+.developers {
+    margin: 30px 100px;
+    text-align: center;
+    display: inline-block;
+}
+
+.developer {
+    display: inline-block;
+    box-shadow: 0px 0px 8px 1px #d4d1d1;
+    border-radius: 3px;
+    background-color: #fff;
+    margin: 10px 0.5em;
+    width: 250px;
+    text-align: left;
+    float: left;
+}
+
+.developer > .profile-pic > img {
+    width: 100%;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.profile-data {
+    padding: 20px;
+    color: #454545;
+    display: inline-block;
+    bottom: 35px;
+    box-sizing: border-box;
+    padding-top: 5px;
+}
+
+.profile-data > span {
+    display: inline-block;
+    width: 100%;
+    margin: 5px 0px;
+}
+
+.developer-name {
+    font-size: 25px;
+    height: 35px;
+    width: 210px !important;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.tech {
+    padding: 5px;
+    background-color: #2196F3;
+    color: #fff;
+    border-radius: 3px;
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+.profile-data a {
+    font-size: 12px;
+    text-decoration: none;
+    padding: 5px;
+    background-color: #607D8B;
+    color: #fff;
+    margin-top: 10px;
+    display: inline-block;
+    border-radius: 3px;
+}
+
+.v-badge {
+    font-size: 20px;
+    font-weight: bolder;
+    background-color: #E91E63;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 0px 5px;
+    width: 25px;
+    position: absolute;
+    display: inline-block;
+    box-shadow: 0px 0px 7px 1px rgba(19, 19, 19, 0.43);
+    color: #ffffff;
+    text-align: center;
+}
+
+.exp {
+    font-size: 12px;
+    display: inline;
+    width: unset !important;
+    padding: 5px;
+    border-radius: 3px;
+    background-color: #FF9800;
+    box-shadow: 0px 0px 3px 1px rgba(128, 128, 128, 0.33);
+    color: #fff;
+}
+
+.header {
+    height: 50px;
+    background-color: #2195f3;
+    box-shadow: 0px 3px 10px 0px #bdbcbc;
+    padding: 0px 7px;
+}
+
+.logo {
+    display: inline-block;
+    font-size: 30px;
+    color: #fff;
+    margin: 5px;
+}
+
+.search {
+    display: inline-block;
+    float: right;
+    margin: 5px;
+    padding: 5px;
+    margin-right: 0px;
+}
+
+.search > input {
+    padding: 10px;
+    border-radius: 3px;
+    border: none;
+}
+
+.profile-pic {
+    height: 250px;
+}
+
+.badge-container {
+    position: relative;
+    bottom: 15px;
+    left: 204px;
+}
+
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzdHlsZS5jc3MiLCJzb3VyY2VSb290IjoiIn0=*/

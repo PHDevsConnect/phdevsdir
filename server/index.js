@@ -53,17 +53,20 @@ process.env.PWD = process.cwd();
 app.use(express.static(path.join(process.env.PWD, "public")));
 
 const api = express.Router();
-require("./app/routes/index.js")(api);
-app.use("/api/v1", api);
-app.get("/", (req, res) => {
-  res.send({
-    message: "Valid endpoint is /api/v1/"
-  });
+require("./routes/index.js")(api);
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/index.html'));
 });
+app.get('/dist/*', (req, res) => {
+  res.sendFile(path.join(__dirname, `../client/${req.originalUrl}`));
+});
+app.use("/api/v1", api);
 app.get("/isAlive", (req, res) => {
   res.writeHead(200, {'Content-Type': 'text/plain'});
   res.end('Server is Up!\n');
 });
+
+
 /**
  * Serve API
  * Module dependencies.
