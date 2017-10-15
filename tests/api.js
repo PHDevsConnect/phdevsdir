@@ -6,7 +6,7 @@ let Developer = require("../server/models/developers");
 // Require dev-dependencies
 let chai = require("chai");
 let chaiHttp = require("chai-http");
-let server = require("../index");
+let server = require("../server/index");
 let should = chai.should();
 let faker = require('faker');
 

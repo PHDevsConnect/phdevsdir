@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./tests --timeout 10000 --exit && mocha ./client/src/tests --timeout 10000 --exit",
+    "test": "mocha ./tests --timeout 10000 --exit && mocha ./client/js/tests --timeout 10000 --exit",
     "build-client": "./node_modules/.bin/webpack ./client/js/app -w",
     "build-server": "babel -d ./build ./server -s -w",
     "start": "node ./build",
