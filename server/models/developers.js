@@ -1,10 +1,7 @@
-//let as opposed to var, the variable maybe reassigned, henced i stuck to let
 let mongoose = require('mongoose');
 
-//const as opposed to var, identifier wont be reassigned
 const Schema = mongoose.Schema;
 
-//const as opposed to var, identifier wont be reassigned
 const developersSchema = new Schema({
   first_name: {
     type: String,
@@ -43,7 +40,6 @@ const developersSchema = new Schema({
   }
 });
 
-//let as opposed to var, the variable maybe reassigned, henced i stuck to let
 let Developers = mongoose.model('Developers', developersSchema);
 
 module.exports = Developers;
