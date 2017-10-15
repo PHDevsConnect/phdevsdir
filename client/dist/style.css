@@ -1,21 +1,23 @@
 body, html {
-    font-family: 'Dosis', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
     margin: 0px;
+    background-color: #ececec;
 }
 .developers {
-    display: inline-block;
-    width: 100%;
+    margin: 30px 100px;
     text-align: center;
-    margin-top: 20px;
+    display: inline-block;
 }
 
 .developer {
     display: inline-block;
-    width: 250px;
     box-shadow: 0px 0px 8px 1px #d4d1d1;
     border-radius: 3px;
-    margin: 10px;
+    background-color: #fff;
+    margin: 10px 0.5em;
+    width: 250px;
     text-align: left;
+    float: left;
 }
 
 .developer > .profile-pic > img {
@@ -25,18 +27,27 @@ body, html {
 }
 
 .profile-data {
-    padding: 10px;
+    padding: 20px;
     color: #454545;
+    display: inline-block;
+    bottom: 35px;
+    box-sizing: border-box;
+    padding-top: 5px;
 }
 
 .profile-data > span {
-    display: block;
+    display: inline-block;
     width: 100%;
-    margin: 5px;
+    margin: 5px 0px;
 }
 
 .developer-name {
     font-size: 25px;
+    height: 35px;
+    width: 210px !important;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .tech {
@@ -60,15 +71,19 @@ body, html {
 }
 
 .v-badge {
-    font-size: 10px;
-    background-color: #009688;
-    padding: 3px 5px;
-    border-radius: 3px;
-    color: #fff;
-    vertical-align: middle;
+    font-size: 20px;
+    font-weight: bolder;
+    background-color: #E91E63;
+    padding: 5px;
+    border-radius: 50%;
     cursor: pointer;
-    display: inline-block;
     margin: 0px 5px;
+    width: 25px;
+    position: absolute;
+    display: inline-block;
+    box-shadow: 0px 0px 7px 1px rgba(19, 19, 19, 0.43);
+    color: #ffffff;
+    text-align: center;
 }
 
 .exp {
@@ -110,4 +125,12 @@ body, html {
     border: none;
 }
 
-/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzdHlsZS5jc3MiLCJzb3VyY2VSb290IjoiIn0=*/
+.profile-pic {
+    height: 250px;
+}
+
+.badge-container {
+    position: relative;
+    bottom: 15px;
+    left: 204px;
+}
