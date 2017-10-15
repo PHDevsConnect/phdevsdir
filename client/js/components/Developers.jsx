@@ -17,7 +17,7 @@ const Developers = () => {
              {
                d.stack.map((e, i) =>
                  <span key={i} className="tech">{e}</span>
-               )               
+               )
              }
            </span>
            <span><a target="_blank" href={d.giturl}>View on Github</a></span>

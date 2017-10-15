@@ -67,6 +67,8 @@ body, html {
     color: #fff;
     vertical-align: middle;
     cursor: pointer;
+    display: inline-block;
+    margin: 0px 5px;
 }
 
 .exp {
