@@ -17,7 +17,7 @@ Params
 - `github_url` (String) `required`
 
 # Using the API
-Here are some examples to aid in using the API. This API currently make use of one endpoint (`/api/v1/developers`), with two HTTP verbs attached to it (GET & POST).
+Here are some examples to aid in using the API. This API currently makes use of one endpoint (`/api/v1/developers`), with two HTTP verbs attached to it (GET & POST).
 
 ### JavaScript
 ```js
