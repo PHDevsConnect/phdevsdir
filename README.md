@@ -176,4 +176,4 @@ print(response.text)
 }
 
 ```
-- Click the SEND button (behind the url bar) and it return a response with "status : 200" if successful.
+- Click the SEND button (behind the url bar) and it should return a response with "status : 200" if successful.
