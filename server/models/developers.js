@@ -1,7 +1,8 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+let mongoose = require('mongoose');
 
-var developersSchema = new Schema({
+const Schema = mongoose.Schema;
+
+const developersSchema = new Schema({
   first_name: {
     type: String,
     required: true,
@@ -39,6 +40,6 @@ var developersSchema = new Schema({
   }
 });
 
-var Developers = mongoose.model('Developers', developersSchema);
+let Developers = mongoose.model('Developers', developersSchema);
 
 module.exports = Developers;
