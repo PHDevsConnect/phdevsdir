@@ -162,9 +162,8 @@ print(response.text)
 # Here's an example of posting data to the api using json
 
 - Paste the app link in the url bar, set the request method from "GET" to "POST"
-- Now  go under HEADERS(just after "Authorization") and make sure content-Type is set application/json  (see image below)
-- ![contenttype](https://user-images.githubusercontent.com/25697914/31719203-8be3250a-b40a-11e7-8c94-13fb431889f7.png)
-- then go under BODY(just after Headers) to select ur dataType: select either "x-www-form-encoded" or "raw" [I prefer to use raw]
+- Now  go under HEADERS(just after "Authorization") and make sure content-Type is set application/json
+- then go under BODY(just after Headers) to select ur dataType: select either "x-www-form-encoded" or "raw" [this example uses raw]
 - After you have selected raw to your left appears a category of dataTypes, default is text, change it to "JSON(application/json)".
 - enter data to be submited like so: (check code below)
 ```
@@ -177,5 +176,4 @@ print(response.text)
 }
 
 ```
-- Click the SEND button behind the url bar and it return a response down below which is either a 200 - successfull and other codes for one kind of failure or the other(the picture below returns error 500; no worries  urs will be successful. *smile*)
-- ![postman](https://user-images.githubusercontent.com/25697914/31720070-726578dc-b40d-11e7-8e70-91029a48e7f7.png)
+- Click the SEND button (behind the url bar) and it return a response with "status : 200" if successful.
