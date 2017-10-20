@@ -145,7 +145,7 @@ const onError = (error) => {
  * Event listener for HTTP server "listening" event.
  */
 const debug = require("debug");
- (onListening)  => {
+ const onListening = ()  => {
   const addr = server.address();
   const bind = typeof addr === "string" ? "pipe " + addr : "port " + addr.port;
   debug("Listening on " + bind);
