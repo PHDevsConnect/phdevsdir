@@ -99,7 +99,7 @@ server.on("listening", onListening);
  * Normalize a port into a number, string, or false.
  */
 
-const normalizePort = (val) => {
+function normalizePort(val) {
   const port = parseInt(val, 10);
 
   if (isNaN(port)) {
@@ -119,7 +119,7 @@ const normalizePort = (val) => {
  * Event listener for HTTP server "error" event.
  */
 
-const onError = (error) => {
+function onError(error) {
   if (error.syscall !== "listen") {
     throw error;
   }
@@ -145,7 +145,7 @@ const onError = (error) => {
  * Event listener for HTTP server "listening" event.
  */
 const debug = require("debug");
- const onListening = ()  => {
+function onListening() {
   const addr = server.address();
   const bind = typeof addr === "string" ? "pipe " + addr : "port " + addr.port;
   debug("Listening on " + bind);

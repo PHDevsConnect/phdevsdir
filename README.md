@@ -63,7 +63,7 @@ axios.get('https://phdevsdir.herokuapp.com/api/v1/developers')
 
 axios.post('https://phdevsdir.herokuapp.com/api/v1/developers', {
   first_name: 'John',
-  last_name: 'Doe'
+  second_name: 'Doe'
   })
   .then( (response) => {
     console.log(response);
