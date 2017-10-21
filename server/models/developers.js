@@ -1,7 +1,7 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
-var developersSchema = new Schema({
+const developersSchema = new Schema({
   first_name: {
     type: String,
     required: true,
@@ -39,6 +39,6 @@ var developersSchema = new Schema({
   }
 });
 
-var Developers = mongoose.model('Developers', developersSchema);
+const Developers = mongoose.model('Developers', developersSchema);
 
 module.exports = Developers;
