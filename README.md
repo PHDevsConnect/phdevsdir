@@ -156,4 +156,7 @@ print(response.text)
 - Install Postman (Google Chrome Required) https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en or Download the [Desktop Client](http://getpostman.com)
 - Launch the app from chrome://apps
 - Paste the app link in the url bar, set the request method (POST, GET, PUT, UPDATE, etc)
+- Be sure to click "Body" under the URL bar in Postman
+- From the options available, select "x-www-form-urlencoded"
+- Set your parameters as indicated above
 - Hit "send"
