@@ -157,3 +157,4 @@ print(response.text)
 - Launch the app from chrome://apps
 - Paste the app link in the url bar, set the request method (POST, GET, PUT, UPDATE, etc)
 - Hit "send"
+- New to POSTMAN? Check tuturials on docs/tutorials.md
