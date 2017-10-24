@@ -156,5 +156,5 @@ print(response.text)
 - Install Postman (Google Chrome Required) https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en or Download the [Desktop Client](http://getpostman.com)
 - Launch the app from chrome://apps
 - Paste the app link in the url bar, set the request method (POST, GET, PUT, UPDATE, etc)
-- Insert Keys matching the API's params alongside your values
 - Hit "send"
+- New to POSTMAN? Check tuturials on docs/tutorials.md
