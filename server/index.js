@@ -26,7 +26,7 @@ const express = require("express"),
 const environment = process.env.NODE_ENV || "development";
 mongoose.Promise = global.Promise;
 
-const online_DB_uri = `mongodb://heroku_8s9nbdfn:4vjc4tbv8oho7jg10tqnv1qd3p@ds113795.mlab.com:13795/heroku_8s9nbdfn`,
+const online_DB_uri = process.env.DB_PRODUCTION,
   local_DB_uri = (process.env.NODE_ENV === "test") ? "mongodb://codehakasee:codehakase1@ds121015.mlab.com:21015/phdevsdir-sb" : `mongodb://localhost:27017/phdevsdir`;
 
 mongoose.connect(
