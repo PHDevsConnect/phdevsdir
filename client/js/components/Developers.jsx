@@ -1,10 +1,41 @@
 import React from 'react';
-import devList from './DevelopersList';
+import axios from 'axios';
 
 
-const Developers = () => {
-  const listItems = devList.map((d) => 
-    <div key={d.id} className="developer">
+class Developers extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      devList: []
+    }
+  }
+
+  componentWillMount() {
+    axios.get('/api/v1/developers').then(
+      (result) => {
+        this.setState({
+          devList: result.data.data.users
+        })
+
+        let newDevList = [];
+        console.log(this.state.devList, '==>>>');
+        this.state.devList.map((dev) => {
+          axios.get(`https://api.github.com/users/${dev.github_url.split('/')[3]}`)
+          .then((result) => {
+            const user = result.data;
+            dev.image = user.avatar_url;
+            newDevList.push(dev);
+            this.setState({ devList: newDevList });
+          });
+        });
+      }
+    )
+    
+  }
+
+  render() {
+    const listItems = this.state.devList.map((d) => 
+    <div key={d._id} className="developer">
       <div className="profile-pic">
         <img src={d.image} />
       </div>
@@ -15,7 +46,7 @@ const Developers = () => {
       </span>
       <div className="profile-data">
       <span className="developer-name">
-        {d.name}
+        {d.first_name + " " + d.last_name}
       </span>
       <span>
         {
@@ -24,17 +55,16 @@ const Developers = () => {
           )
         }
       </span>
-      <span><a target="_blank" href={d.giturl}>View on Github</a></span>
+      <span><a target="_blank" href={d.github_url}>View on Github</a></span>
       </div>
     </div>
   );
-  
-  
   return (
     <div className="developers">
       {listItems}
     </div>
   );
+  }
  }
 
 export default Developers;

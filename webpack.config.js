@@ -3,7 +3,6 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  devtool: debug ? 'inline-sourcemap' : true,
   module: {
     loaders: [
       {
@@ -46,5 +45,6 @@ module.exports = {
     }),
     new ExtractTextPlugin('style.css'),
     new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: true })
   ],
 };

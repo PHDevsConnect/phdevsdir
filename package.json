@@ -14,10 +14,8 @@
     "type": "git"
   },
   "dependencies": {
-    "react": "~15.6.1",
-    "react-dom": "~15.6.1",
-    "react-router-dom": "^4.2.2",
     "async": "^2.5.0",
+    "axios": "^0.17.0",
     "babel-polyfill": "^6.26.0",
     "bcrypt": "^1.0.2",
     "body-parser": "^1.17.2",
@@ -38,6 +36,9 @@
     "mongoose": "^4.11.3",
     "morgan": "^1.8.2",
     "path": "^0.12.7",
+    "react": "~15.6.1",
+    "react-dom": "~15.6.1",
+    "react-router-dom": "^4.2.2",
     "shortid": "^2.2.8",
     "socket.io": "^2.0.3",
     "validator": "^8.0.0"
